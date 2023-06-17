@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= typeof title != 'undefined' ? title: 'Real Time' %>
+    </title>
+
+    <link rel="shortcut icon" href="/images/system_photos/logo.png" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" type="image/png">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/room.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+</head>
+<body>
+
+
+    <%- body -%>
+
+    <!-- <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script> -->
+    <script type="text/javascript" src="js/AgoraRTC_N-4.17.2.js"></script>
+    <script type="text/javascript" src="js/agora-rtm-sdk-1.5.1.js"></script>
+    <script type="text/javascript" src="js/script-rtc.js"></script>
+    <script type="text/javascript" src="js/script-rtm.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/room.js"></script>
+
+</body>
+</html>
+  
