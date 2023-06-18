@@ -1,4 +1,4 @@
-const APP_ID = process.env.APP_ID
+const APP_ID = '3621bc00f6e04f9ea22f2af60241203f'
 
 let uid = sessionStorage.getItem('uid')
 if(!uid){
@@ -17,7 +17,7 @@ const urlParams = new URLSearchParams(queryString)
 let roomId = urlParams.get('room')
 
 if(!roomId){
-    roomId = 'main'
+    roomId = '1920384765'
 }
 
 let displayName = sessionStorage.getItem('display_name')
@@ -54,12 +54,21 @@ let joinRoomInit = async () => {
 
     client.on('user-published', handleUserPublished)
     client.on('user-left', handleUserLeft)
+
     joinStream()
+}
+
+
+let membersInStream=async()=>{
+
 }
 
 joinRoomInit()
 
+
 let joinStream = async () => {
+
+    await membersInStream()
 
     if(!displayName){
         window.location = '/'
@@ -86,6 +95,20 @@ let joinStream = async () => {
 
     localTracks[1].play(`user-${uid}`)
     await client.publish([localTracks[0], localTracks[1]])
+
+
+}
+
+let generateRoomLink=async(id)=>{
+
+    navigator.clipboard.writeText(roomId).then(function() {
+        alert('Room ID copied successfully!');
+      }, function(err) {
+        console.error('Could not copy ID: ', err);
+        alert('Could not copy link');
+
+      });
+    
 }
 
 let switchToCamera = async () => {
@@ -263,6 +286,7 @@ document.getElementById('mic-btn').addEventListener('click', toggleMic)
 document.getElementById('screen-btn').addEventListener('click', toggleScreen)
 document.getElementById('join-btn').addEventListener('click', joinStream)
 document.getElementById('leave-btn').addEventListener('click', leaveStream)
+document.getElementById('img').addEventListener('click', generateRoomLink)
 
 
 

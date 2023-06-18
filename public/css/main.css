@@ -44,6 +44,16 @@ a {
   border-radius: 50%;
 }
 
+#img{
+  width: 30px;
+  height: 30px;
+}
+
+#img:hover{
+  cursor: pointer;
+  
+}
+
 .avatar__md {
   height: 40px;
   width: 40px;

@@ -1,11 +1,9 @@
 const express= require("express");
 const expressLayouts=require('express-ejs-layouts');
-// const AgoraRTM =require('agora-rtm-sdk');
+
+require(`dotenv`).config();
 
 const app=express()
-
-// const client = AgoraRTM.createInstance('demoAppId', { enableLogUpload: false });
-
 
 const port=process.env.PORT || 80;
 
@@ -34,3 +32,5 @@ app.get('/room',(req,res)=>{
 const server = app.listen(port, function () {
     console.log('listening to port 80')
 });
+
+module.exports=app
